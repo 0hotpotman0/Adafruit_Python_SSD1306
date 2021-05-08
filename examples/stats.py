@@ -38,6 +38,9 @@ RST = None     # on the PiOLED this pin isnt used
 # 128x64 display with hardware I2C:
 disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST)
 
+# 64x48 display with hardware I2C:
+# disp = Adafruit_SSD1306.SSD1306_64_48(rst=RST)
+
 # Note you can change the I2C address by passing an i2c_address parameter like:
 # disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, i2c_address=0x3C)
 
@@ -67,11 +70,22 @@ draw.rectangle((0,0,width,height), outline=0, fill=0)
 
 # Draw some shapes.
 # First define some constants to allow easy resizing of shapes.
+
+# 64*48 OLED padding = 20
 padding = 20
+
+# 128*48 OLED padding = -2
+#padding = -2
+
 top = padding
 bottom = height-padding
 # Move left to right keeping track of the current x position for drawing shapes.
+
+# 64*48 OLED x = 33
 x = 33
+
+# 128*64 OLED x = 0
+#x = 0
 
 # Load default font.
 font = ImageFont.load_default()
